@@ -58,9 +58,12 @@ export const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <div
+            <a
               key={idx}
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
               <div className="p-6 space-y-4">
@@ -88,8 +91,30 @@ export const Projects = () => {
                     </span>
                   ))}
                 </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-3 pt-2 text-sm">
+                  {project.link && project.link !== "#" && (
+                    <span className="inline-flex items-center gap-2 text-primary font-medium">
+                      <ArrowUpRight className="w-4 h-4" />
+                      Live
+                    </span>
+                  )}
+                  {project.github && project.github !== "#" && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Github className="w-4 h-4" />
+                      Code
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
