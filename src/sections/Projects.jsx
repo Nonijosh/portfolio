@@ -7,7 +7,7 @@ const projects = [
       "A simple weather app I built to better understand how APIs work. It shows the weather for your current location and also lets you search other locations to view their forecast. It includes a small 'Did You Know?' section that shares an interesting fact about the region you are viewing.",
     image: "/projects/project1.png",
     tags: ["Go", "JavaScript", "HTML", "CSS", "Weather API"],
-    link: "https://24weather.vercel.app",
+    link: "https://24hrsweather.vercel.app",
     github: "#",
   },
   {
